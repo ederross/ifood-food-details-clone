@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "ifood-clone",
+    "slug": "ifood-clone",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
