@@ -2,6 +2,11 @@ import { StyleSheet } from 'react-native';
 import theme from '../../global/theme';
 
 export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: theme.color.bg,
+  },
   bannerContainer: {
     marginTop: -1000,
     paddingTop: 1000,

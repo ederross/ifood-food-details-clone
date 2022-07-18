@@ -1,33 +1,50 @@
-import React, { useRef } from 'react';
-import {
-  Animated,
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { Animated, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import EstablishmentDeliveryTimeCard from '../../components/EstablishmentDeliveryTimeCard';
 import Header from '../../components/Header';
-import { BANNER_HEIGHT } from '../../utils/contants';
+import { BANNER_HEIGHT, TOPNAVI_H } from '../../utils/contants';
 import { styles } from './styles';
-
-
+import { StatusBar } from 'expo-status-bar';
+import { ADDITIONALS_ITEM_LIST } from '../../data';
+import AdditionalsItemList from '../../components/AdditionalsItemList';
 
 const FoodDetails = () => {
   const scrollAnim = useRef(new Animated.Value(0)).current;
 
+  const safeArea = useSafeAreaInsets();
+
+  const isFloating = !!scrollAnim;
+  const [isTransparent, setTransparent] = useState(isFloating);
+
+  useEffect(() => {
+    if (!scrollAnim) {
+      return;
+    }
+    const listenerId = scrollAnim.addListener((a) => {
+      const topNaviOffset = BANNER_HEIGHT - TOPNAVI_H - safeArea.top;
+      isTransparent !== a.value < topNaviOffset &&
+        setTransparent(!isTransparent);
+    });
+    return () => scrollAnim.removeListener(listenerId);
+  });
+
   return (
     <>
-      <View>
+      <StatusBar backgroundColor="transparent" />
+      <View style={styles.container}>
         <Header
           title={''}
           isBackgroundVisible={false}
           action={''}
           scrollAnim={scrollAnim}
         />
+
         <Animated.ScrollView
+          stickyHeaderIndices={ADDITIONALS_ITEM_LIST.map((obj, index) => {
+            return obj.isHeader ? index + 2 : null;
+          }).filter(Boolean)}
+          contentInset={{ top: 90 }}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { y: scrollAnim } } }],
             { useNativeDriver: true }
@@ -42,7 +59,7 @@ const FoodDetails = () => {
               }}
             />
           </View>
-          <View style={styles.contentContainer}>
+          <View style={[styles.contentContainer]}>
             <Text style={styles.title}>Refeição tam. Tradicional</Text>
             <Text style={styles.description}>
               Marmitex individual com arroz, feijão, acompanhamento escolido e
@@ -52,8 +69,15 @@ const FoodDetails = () => {
 
             <Text style={styles.priceValue}>A partir de R$ 20,00</Text>
             <EstablishmentDeliveryTimeCard />
-           
           </View>
+
+          {ADDITIONALS_ITEM_LIST.map((item, index) => (
+            <AdditionalsItemList
+              key={index}
+              title={item.title + ' ' + index}
+              isHeader={item.isHeader}
+            />
+          ))}
         </Animated.ScrollView>
       </View>
     </>
@@ -63,7 +87,6 @@ const FoodDetails = () => {
 export const animatedStyles = {
   banner: (scrollAnim) => ({
     height: BANNER_HEIGHT,
-
     width: '200%',
     transform: [
       {

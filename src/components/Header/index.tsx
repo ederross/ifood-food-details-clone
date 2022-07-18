@@ -53,11 +53,16 @@ const Header = ({
 const animatedStyles = {
   container: (safeArea, isFloating, isTransparent) => ({
     paddingTop: safeArea.top,
-    marginBottom: isFloating ? -TOPNAVI_H - safeArea.top : 0,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    // marginBottom: isTransparent ? -TOPNAVI_H - safeArea.top : 0,
+    paddingLeft: 16,
     height: TOPNAVI_H + safeArea.top,
     justifyContent: 'center',
     shadowOffset: { y: 0 },
-    backgroundColor: isTransparent ? '#0001' : '#FFF',
+    backgroundColor: isTransparent ? 'transparent' : '#FFF',
     shadowOpacity: isTransparent ? 0 : 0.5,
     elevation: isTransparent ? 0.01 : 5,
     zIndex: 100,

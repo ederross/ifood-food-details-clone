@@ -3,8 +3,8 @@ export default {
     primary: '#EA1D2C',
     secondary: '#0000',
     bg: '#FFFFFF',
-    bg_transparent: 'rgba(0,0,0,0.2)',
-    bg_secondary: '#272727',
+    bg_transparent: 'rgba(0,0,0,0.4)',
+    bg_secondary: '#F7F7F7',
 
     yellow_600: '#DDA95D',
 
