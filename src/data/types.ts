@@ -1,8 +1,7 @@
 export interface IAdditionalsItem {
-  title: string;
+  title: string[];
   isHeader: boolean;
   quantity: number;
-  isDescription: boolean;
   required: boolean;
   type: IAdditionalsItemListTYPES;
 }

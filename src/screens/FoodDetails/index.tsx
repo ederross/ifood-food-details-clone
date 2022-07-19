@@ -74,7 +74,10 @@ const FoodDetails = () => {
           {ADDITIONALS_ITEM_LIST.map((item, index) => (
             <AdditionalsItemList
               key={index}
-              title={item.title + ' ' + index}
+              quantity={item.quantity}
+              type={item.type}
+              required={item.required}
+              title={item.title}
               isHeader={item.isHeader}
             />
           ))}

@@ -63,8 +63,8 @@ const animatedStyles = {
     justifyContent: 'center',
     shadowOffset: { y: 0 },
     backgroundColor: isTransparent ? 'transparent' : '#FFF',
-    shadowOpacity: isTransparent ? 0 : 0.5,
-    elevation: isTransparent ? 0.01 : 5,
+    // shadowOpacity: isTransparent ? 0 : 0.5,
+    // elevation: isTransparent ? 0.01 : 5,
     zIndex: 100,
   }),
   title: (isTransparent) => ({
