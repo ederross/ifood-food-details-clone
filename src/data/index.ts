@@ -2,6 +2,7 @@ import { IAdditionalsItem, IAdditionalsItemListTYPES } from './types';
 
 export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
   {
+    id: 1,
     title: ['Sabores'],
     isHeader: true,
     quantity: 1,
@@ -9,6 +10,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 2,
     title: ['Mussarela', 'Mussarela com rodelas de tomate'],
     isHeader: false,
     quantity: 0,
@@ -16,6 +18,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 3,
     title: ['Calabresa', 'Calabresa com rodelas de cebola'],
     isHeader: false,
     quantity: 0,
@@ -23,6 +26,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 4,
     title: ['Pepperoni', 'Mussarela com rodelas de pepperoni'],
     isHeader: false,
     quantity: 0,
@@ -30,6 +34,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 5,
     title: ['Marguerita', 'Mussarela com tomates cerejas e manjericão'],
     isHeader: false,
     quantity: 0,
@@ -37,6 +42,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 6,
     title: ['Alho Frito', 'Mussarela com alho frito'],
     isHeader: false,
     quantity: 0,
@@ -44,6 +50,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 7,
     title: ['Atum', 'Atum com cebolas e ervilha'],
     isHeader: false,
     quantity: 0,
@@ -51,6 +58,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 8,
     title: ['Alho Frito', 'Mussarela com alho frito'],
     isHeader: false,
     quantity: 0,
@@ -58,6 +66,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 9,
     title: ['Dois queijos', 'Mussarela e Catupiry Original'],
     isHeader: false,
     quantity: 0,
@@ -65,6 +74,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 10,
     title: ['Caipira', 'Frango, Catupiry Original, milho e bacon'],
     isHeader: false,
     quantity: 0,
@@ -72,6 +82,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 11,
     title: ['Brocolis', 'Mussarela, brocolis, bacon e alho frito'],
     isHeader: false,
     quantity: 0,
@@ -79,6 +90,7 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     type: IAdditionalsItemListTYPES.RadioButton,
   },
   {
+    id: 12,
     title: ['Frango 3', 'Frango, mussarela, Catupiruy e bacon'],
     isHeader: false,
     quantity: 0,

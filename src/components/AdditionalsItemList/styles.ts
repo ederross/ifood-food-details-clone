@@ -30,7 +30,8 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'SulSansRegular',
-    fontSize: 16,
+    fontSize: 14,
+    color: theme.color.bg_secondary_button,
   },
   descriptionContainer: {
     width: '100%',
@@ -68,6 +69,8 @@ export const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   radioButtonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
     alignSelf: 'center',
     width: 24,
     height: 24,

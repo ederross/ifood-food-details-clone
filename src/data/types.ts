@@ -1,4 +1,5 @@
 export interface IAdditionalsItem {
+  id: number;
   title: string[];
   isHeader: boolean;
   quantity: number;

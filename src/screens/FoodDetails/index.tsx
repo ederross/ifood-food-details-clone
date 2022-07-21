@@ -16,6 +16,9 @@ const FoodDetails = () => {
 
   const isFloating = !!scrollAnim;
   const [isTransparent, setTransparent] = useState(isFloating);
+  const [selected, setSelected] = useState();
+  
+  const [customQuantity, setCustomQuantity] = useState(0);
 
   useEffect(() => {
     if (!scrollAnim) {
@@ -74,7 +77,12 @@ const FoodDetails = () => {
           {ADDITIONALS_ITEM_LIST.map((item, index) => (
             <AdditionalsItemList
               key={index}
+              id={index}
+              setSelected={setSelected}
+              selected={selected}
               quantity={item.quantity}
+              setCustomQuantity={setCustomQuantity}
+              customQuantity={customQuantity}
               type={item.type}
               required={item.required}
               title={item.title}
