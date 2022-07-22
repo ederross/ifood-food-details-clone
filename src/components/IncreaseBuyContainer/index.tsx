@@ -43,6 +43,11 @@ const IncreaseBuyContainer = () => {
         duration: 200,
         useNativeDriver: true,
       }),
+      Animated.timing(OPACITY_FIX, {
+        toValue: 1,
+        duration: 200,
+        useNativeDriver: true,
+      }),
     ]).start();
   };
 
@@ -73,6 +78,11 @@ const IncreaseBuyContainer = () => {
       }),
       Animated.timing(OPACITY, {
         toValue: 0,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+      Animated.timing(OPACITY_FIX, {
+        toValue: 1,
         duration: 200,
         useNativeDriver: true,
       }),
