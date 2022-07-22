@@ -14,7 +14,7 @@ import { animatedStyles } from '../../animations/animationsStyles';
 
 const IncreaseBuyContainer = () => {
   const [quantity, setQuantity] = useState(1);
-  const [amount, setAmount] = useState(42.8);
+  const amount = useState(42.8)[0];
   const [finalAmount, setFinalAmount] = useState(0);
   const INITIAL_TOP_VALUE = useState(new Animated.Value(10))[0];
   const OPACITY = useState(new Animated.Value(0))[0];
