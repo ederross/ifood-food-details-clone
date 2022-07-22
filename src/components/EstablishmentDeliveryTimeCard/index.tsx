@@ -19,7 +19,7 @@ const EstablishmentDeliveryTimeCard = () => {
               color="black"
               style={styles.icon}
             />
-            <Text style={styles.title}>Pizzaria do Ross</Text>
+            <Text style={styles.title}>Pizzaria do Eder Ross</Text>
           </View>
           <View style={styles.column}>
             <FontAwesome

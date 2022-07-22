@@ -58,16 +58,18 @@ const FoodDetails = () => {
         >
           <View style={styles.bannerContainer}>
             <Animated.Image
+              resizeMode={'cover'}
               style={animatedStyles.banner(scrollAnim)}
               source={{
-                uri: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+                uri: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
               }}
             />
           </View>
           <View style={[styles.contentContainer]}>
             <Text style={styles.title}>Pizza grande 8 pedaços</Text>
             <Text style={styles.description}>
-              Diversos sabores para você! A melhor pizzaria da região, pizzaria do Ross
+              Diversos sabores para você! A melhor pizzaria da região, pizzaria
+              do Eder Ross
             </Text>
             <Text style={styles.servesDescription}>Serve até 3 pessoas</Text>
 
@@ -99,6 +101,7 @@ const FoodDetails = () => {
 export const animatedStyles = {
   banner: (scrollAnim) => ({
     height: BANNER_HEIGHT,
+
     width: '200%',
     transform: [
       {

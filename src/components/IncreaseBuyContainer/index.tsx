@@ -18,27 +18,34 @@ const IncreaseBuyContainer = () => {
   const [finalAmount, setFinalAmount] = useState(0);
   const INITIAL_TOP_VALUE = useState(new Animated.Value(10))[0];
   const OPACITY = useState(new Animated.Value(0))[0];
-  const OPACITY_FIX = useState(new Animated.Value(0))[0];
+  const INITIAL_TOP_VALUE_FIX = useState(new Animated.Value(0))[0];
+  const OPACITY_FIX = useState(new Animated.Value(1))[0];
 
   const handleAdd = () => {
     setQuantity(quantity + 1);
     Animated.sequence([
+     
       Animated.timing(OPACITY, {
         toValue: 1,
         duration: 200,
         useNativeDriver: true,
       }),
       Animated.timing(INITIAL_TOP_VALUE, {
-        toValue: -10,
+        toValue: -15,
         duration: 200,
         useNativeDriver: true,
       }),
       Animated.timing(INITIAL_TOP_VALUE, {
-        toValue: -1,
+        toValue: 0,
         duration: 200,
         useNativeDriver: true,
       }),
       Animated.timing(OPACITY, {
+        toValue: 0,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+      Animated.timing(OPACITY_FIX, {
         toValue: 0,
         duration: 200,
         useNativeDriver: true,
@@ -53,7 +60,7 @@ const IncreaseBuyContainer = () => {
 
   const handleRemove = () => {
     setQuantity(quantity === 1 ? quantity - 0 : quantity - 1);
-    setFinalAmount(finalAmount - amount);
+    setFinalAmount(quantity === 1 ? finalAmount - 0 : finalAmount - amount);
 
     Animated.sequence([
       Animated.timing(OPACITY, {
@@ -130,7 +137,7 @@ const IncreaseBuyContainer = () => {
               style={[
                 animatedStyles.componentAdditionalItemsListTitle({
                   OPACITY: OPACITY_FIX,
-                  INITIAL_TOP_VALUE,
+                  INITIAL_TOP_VALUE: INITIAL_TOP_VALUE_FIX,
                 }),
                 styles.title,
                 {

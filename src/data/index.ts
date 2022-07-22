@@ -97,4 +97,28 @@ export const ADDITIONALS_ITEM_LIST: IAdditionalsItem[] = [
     required: false,
     type: IAdditionalsItemListTYPES.RadioButton,
   },
+  {
+    id: 13,
+    title: ['Romeo & Julieta', 'Mussarela, goiabada e borda recheada surpresa'],
+    isHeader: false,
+    quantity: 0,
+    required: false,
+    type: IAdditionalsItemListTYPES.RadioButton,
+  },
+  {
+    id: 14,
+    title: ['Chocolate & Banana Premium', 'Chocolate com banana & borda de goiabada'],
+    isHeader: false,
+    quantity: 0,
+    required: false,
+    type: IAdditionalsItemListTYPES.RadioButton,
+  },
+  {
+    id: 15,
+    title: ['Brigadeiro', 'Mussarela com brigadeira e banana'],
+    isHeader: false,
+    quantity: 0,
+    required: false,
+    type: IAdditionalsItemListTYPES.RadioButton,
+  },
 ];
