@@ -65,10 +65,9 @@ const FoodDetails = () => {
             />
           </View>
           <View style={[styles.contentContainer]}>
-            <Text style={styles.title}>Refeição tam. Tradicional</Text>
+            <Text style={styles.title}>Pizza grande 8 pedaços</Text>
             <Text style={styles.description}>
-              Marmitex individual com arroz, feijão, acompanhamento escolido e
-              salada
+              Diversos sabores para você! A melhor pizzaria da região, pizzaria do Ross
             </Text>
             <Text style={styles.servesDescription}>Serve até 3 pessoas</Text>
 

@@ -1,7 +1,7 @@
 export default {
   color: {
     primary: '#EA1D2C',
-    secondary: '#0000',
+    secondary: '#000',
     bg: '#FFFFFF',
     bg_secondary: '#F7F7F7',
     bg_transparent_dark: 'rgba(0,0,0,0.4)',

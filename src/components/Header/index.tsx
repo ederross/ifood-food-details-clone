@@ -1,24 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Animated, StyleSheet, Text, View } from 'react-native';
+import { Animated, View } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import { BANNER_HEIGHT, TOPNAVI_H } from '../../utils/contants';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import theme from '../../global/theme';
-import { MotiView, AnimatePresence } from 'moti';
 import { handleTranslateToggleYAnimation } from '../../animations/useToggleYAnimation';
 
 interface IHeader {
   title: string;
- 
+
   scrollAnim: Animated.Value;
 }
 
-
-
-const Header = ({
-  title,
-  scrollAnim,
-}: IHeader) => {
+const Header = ({ title, scrollAnim }: IHeader) => {
   const safeArea = useSafeAreaInsets();
 
   const isFloating = !!scrollAnim;
@@ -47,7 +41,7 @@ const Header = ({
       conditional: isTextOffset,
       INITIAL_TOP_VALUE,
       OPACITY,
-      initialTopValueNum: -15
+      initialTopValueNum: -15,
     });
   }, [isTextOffset]);
 
@@ -68,7 +62,7 @@ const Header = ({
             { top: 20 },
           ]}
         >
-         {title}
+          {title}
         </Animated.Text>
         <View />
       </View>
