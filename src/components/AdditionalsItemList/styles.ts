@@ -17,11 +17,11 @@ export const styles = StyleSheet.create({
     marginBottom: 16,
     width: '100%',
     fontSize: 18,
-    fontFamily: 'SulSansMedium',
+    fontFamily: theme.fonts.SulSansRegular,
     justifyContent: 'space-between',
   },
   quantityLabel: {
-    fontFamily: 'SulSansMedium',
+    fontFamily: theme.fonts.SulSansRegular,
     fontSize: 14,
     marginTop: -16,
     paddingLeft: 12,
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     color: theme.color.text_secondary,
   },
   title: {
-    fontFamily: 'SulSansRegular',
+    fontFamily: theme.fonts.SulSansRegular,
     fontSize: 14,
     color: theme.color.bg_secondary_button,
   },
@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   description: {
-    fontFamily: 'SulSansRegular',
+    fontFamily: theme.fonts.SulSansRegular,
     fontSize: 14,
 
     color: theme.color.text_secondary,
@@ -64,7 +64,7 @@ export const styles = StyleSheet.create({
   },
   requiredText: {
     fontSize: 10,
-    fontFamily: 'SulSansRegular',
+    fontFamily: theme.fonts.SulSansRegular,
     color: '#FFF',
     textTransform: 'uppercase',
   },
@@ -76,5 +76,18 @@ export const styles = StyleSheet.create({
     height: 24,
     borderRadius: 24,
     backgroundColor: theme.color.bg_secondary,
+  },
+  requiredCheckIconContainer: {
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 4,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 12,
+    marginRight: 16,
+  },
+  checkIcon: {
+    alignSelf: 'flex-end',
   },
 });

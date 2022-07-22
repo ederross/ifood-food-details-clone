@@ -11,33 +11,33 @@ export const styles = StyleSheet.create({
     marginTop: -1000,
     paddingTop: 1000,
     alignItems: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   contentContainer: {
     padding: 24,
   },
   title: {
     fontSize: 20,
-    fontFamily: 'SulSansMedium',
+    fontFamily: theme.fonts.SulSansMedium,
     marginBottom: 8,
-    color: theme.color.text
+    color: theme.color.text,
   },
   description: {
     fontSize: 16,
-    color:  theme.color.text_secondary,
-    fontFamily: 'SulSansRegular',
+    color: theme.color.text_secondary,
+    fontFamily: theme.fonts.SulSansRegular,
     marginBottom: 8,
   },
   servesDescription: {
     fontSize: 14,
     color: theme.color.text,
-    fontFamily: 'SulSansRegular',
+    fontFamily: theme.fonts.SulSansRegular,
     marginBottom: 20,
   },
   priceValue: {
     fontSize: 16,
-    color:  theme.color.text_secondary,
-    fontFamily: 'SulSansRegular',
+    color: theme.color.text_secondary,
+    fontFamily: theme.fonts.SulSansRegular,
     marginBottom: 20,
-  }
+  },
 });

@@ -8,6 +8,7 @@ import { styles } from './styles';
 import { StatusBar } from 'expo-status-bar';
 import { ADDITIONALS_ITEM_LIST } from '../../data';
 import AdditionalsItemList from '../../components/AdditionalsItemList';
+import IncreaseBuyContainer from '../../components/IncreaseBuyContainer';
 
 const FoodDetails = () => {
   const scrollAnim = useRef(new Animated.Value(0)).current;
@@ -17,7 +18,7 @@ const FoodDetails = () => {
   const isFloating = !!scrollAnim;
   const [isTransparent, setTransparent] = useState(isFloating);
   const [selected, setSelected] = useState();
-  
+
   const [customQuantity, setCustomQuantity] = useState(0);
 
   useEffect(() => {
@@ -37,13 +38,14 @@ const FoodDetails = () => {
       <StatusBar backgroundColor="transparent" />
       <View style={styles.container}>
         <Header
-          title={''}
-          isBackgroundVisible={false}
-          action={''}
+          title={'Sextou com Pizza deliciosa 😍'}
           scrollAnim={scrollAnim}
         />
 
+        <IncreaseBuyContainer></IncreaseBuyContainer>
+
         <Animated.ScrollView
+          contentContainerStyle={{ paddingBottom: 180 }}
           stickyHeaderIndices={ADDITIONALS_ITEM_LIST.map((obj, index) => {
             return obj.isHeader ? index + 2 : null;
           }).filter(Boolean)}

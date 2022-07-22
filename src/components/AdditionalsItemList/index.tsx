@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { Alert, Text, TouchableOpacity, Vibration, View } from 'react-native';
+import {
+  Animated,
+  Text,
+  TouchableOpacity,
+  Vibration,
+  View,
+} from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { IAdditionalsItemListTYPES } from '../../data/types';
 import theme from '../../global/theme';
 import { styles } from './styles';
+import { animatedStyles } from '../../animations/animationsStyles';
+import { handleTranslateToggleYAnimation } from '../../animations/useToggleYAnimation';
 
 export interface IAdditionalsItemListComponent {
   id: number;
@@ -32,11 +41,23 @@ const AdditionalsItemList = ({
   const itemStyle = isHeader ? styles.categoryItem : styles.item;
   const textStyle = isHeader ? styles.categoryItem : styles.title;
 
+  const INITIAL_TOP_VALUE = useState(new Animated.Value(-50))[0];
+  const OPACITY = useState(new Animated.Value(0))[0];
+
   const handleSelected = () => {
     setSelected(selected === id ? 0 : id);
     Vibration.vibrate(1000);
     setCustomQuantity(selected === id ? 0 : 1);
   };
+
+  useEffect(() => {
+    handleTranslateToggleYAnimation({
+      conditional: selected === id,
+      INITIAL_TOP_VALUE,
+      OPACITY,
+      initialTopValueNum: -5,
+    });
+  }, [selected, OPACITY]);
 
   return (
     <>
@@ -62,6 +83,7 @@ const AdditionalsItemList = ({
           {title.length > 1 && type === IAdditionalsItemListTYPES.RadioButton && (
             <>
               <TouchableOpacity
+                onPress={isHeader ? () => {} : handleSelected}
                 style={[
                   styles.radioButtonContainer,
                   {
@@ -81,47 +103,33 @@ const AdditionalsItemList = ({
                   ></View>
                 )}
               </TouchableOpacity>
-              {/* <Checkbox
-                style={{
-                  width: 24,
-                  height: 24,
-                  borderRadius: 24,
-                  backgroundColor: theme.color.bg_secondary,
-                  borderColor: theme.color.bg_secondary,
-                }}
-                value={isChecked}
-                onValueChange={handleSelected}
-              /> */}
-
-              {/* <RadioButton
-                value={String(id)}
-                theme={{
-                  roundness: 0,
-                  mode: 'exact',
-                  animation: { scale: 0},
-                  colors: {
-
-                    backdrop: 'blue',
-                    background: 'red',
-                    primary: theme.color.primary,
-                    accent: theme.color.primary,
-                    onSurface: 'blue',
-                  },
-                }}
-                
-                status={isChecked ? 'checked' : 'unchecked'}
-                onPress={() => {
-                  handleSelected;
-                }}
-              /> */}
             </>
           )}
         </View>
         {required && (
           <>
-            <View style={styles.requiredContainer}>
-              <Text style={styles.requiredText}>Obrigatório</Text>
-            </View>
+            {selected ? (
+              <Animated.View
+                style={[
+                  animatedStyles.componentAdditionalItemsListTitle({
+                    INITIAL_TOP_VALUE,
+                    OPACITY,
+                  }),
+                  styles.requiredCheckIconContainer,
+                ]}
+              >
+                <MaterialIcons
+                  styles={styles.checkIcon}
+                  name={'check'}
+                  size={24}
+                  color={theme.color.success}
+                />
+              </Animated.View>
+            ) : (
+              <View style={styles.requiredContainer}>
+                <Text style={styles.requiredText}>Obrigatório</Text>
+              </View>
+            )}
           </>
         )}
 

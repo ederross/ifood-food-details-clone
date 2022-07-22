@@ -5,49 +5,18 @@ import { BANNER_HEIGHT, TOPNAVI_H } from '../../utils/contants';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import theme from '../../global/theme';
 import { MotiView, AnimatePresence } from 'moti';
+import { handleTranslateToggleYAnimation } from '../../animations/useToggleYAnimation';
 
 interface IHeader {
   title: string;
-  action: string;
-  isBackgroundVisible: boolean;
+ 
   scrollAnim: Animated.Value;
 }
 
-function Shape() {
-  return (
-    <MotiView
-      from={{
-        opacity: 0,
-        scale: 0.9,
-      }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-      }}
-      exit={{
-        opacity: 0,
-        scale: 0.9,
-      }}
-      style={styles.shape}
-    />
-  );
-}
 
-const styles = StyleSheet.create({
-  shape: {
-    justifyContent: 'center',
-    height: 250,
-    width: 250,
-    borderRadius: 25,
-    marginRight: 10,
-    backgroundColor: 'white',
-  },
-});
 
 const Header = ({
   title,
-  action,
-  isBackgroundVisible,
   scrollAnim,
 }: IHeader) => {
   const safeArea = useSafeAreaInsets();
@@ -73,36 +42,13 @@ const Header = ({
     return () => scrollAnim.removeListener(listenerId);
   });
 
-  const handleTranslateToggleYAnimation = () => {
-    if (isTextOffset) {
-      Animated.timing(INITIAL_TOP_VALUE, {
-        toValue: 0,
-        duration: 200,
-        useNativeDriver: true,
-      }).start();
-      Animated.timing(OPACITY, {
-        toValue: 0,
-        duration: 200,
-        useNativeDriver: true,
-      }).start();
-      return;
-    } else {
-      Animated.timing(INITIAL_TOP_VALUE, {
-        toValue: -15,
-        duration: 200,
-        useNativeDriver: true,
-      }).start();
-      Animated.timing(OPACITY, {
-        toValue: 1,
-        duration: 200,
-        useNativeDriver: true,
-      }).start();
-      return;
-    }
-  };
-
   useEffect(() => {
-    handleTranslateToggleYAnimation();
+    handleTranslateToggleYAnimation({
+      conditional: isTextOffset,
+      INITIAL_TOP_VALUE,
+      OPACITY,
+      initialTopValueNum: -15
+    });
   }, [isTextOffset]);
 
   return (
@@ -122,7 +68,7 @@ const Header = ({
             { top: 20 },
           ]}
         >
-          Sextou com Pizza deliciosa 😍
+         {title}
         </Animated.Text>
         <View />
       </View>
@@ -130,7 +76,7 @@ const Header = ({
   );
 };
 
-const animatedStyles = {
+export const animatedStyles = {
   container: (safeArea, isTransparent) => ({
     paddingTop: safeArea.top,
     position: 'absolute',

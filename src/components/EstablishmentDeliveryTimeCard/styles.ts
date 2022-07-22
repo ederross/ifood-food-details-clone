@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 12,
-    fontFamily: 'SulSansRegular',
+    fontFamily: theme.fonts.SulSansRegular,
     color: theme.color.text,
   },
 });
