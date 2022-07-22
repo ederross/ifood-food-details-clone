@@ -1,12 +1,6 @@
-import { useState } from 'react';
 import { Animated } from 'react-native';
+import { IToggleTranslateYAnimation } from './animationsTypes';
 
-export interface IToggleTranslateYAnimation {
-  conditional?: boolean;
-  INITIAL_TOP_VALUE: any;
-  initialTopValueNum?: any;
-  OPACITY: any;
-}
 
 export const handleTranslateToggleYAnimation = ({
   conditional,

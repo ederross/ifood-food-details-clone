@@ -1,7 +1,7 @@
 import theme from '../global/theme';
 import { TOPNAVI_H } from '../utils/contants';
 import { IComponentHeader } from './animationsTypes';
-import { IToggleTranslateYAnimation } from './useToggleYAnimation';
+import { IToggleTranslateYAnimation } from './animationsTypes';
 
 export const animatedStyles = {
   //   Header component styles below
