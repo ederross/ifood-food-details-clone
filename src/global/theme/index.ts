@@ -4,7 +4,7 @@ export default {
     secondary: '#0000',
     bg: '#FFFFFF',
     bg_secondary: '#F7F7F7',
-    bg_transparent: 'rgba(0,0,0,0.4)',
+    bg_transparent_dark: 'rgba(0,0,0,0.4)',
     bg_secondary_button: '#1A1A1A',
 
     yellow_600: '#DDA95D',
@@ -15,5 +15,10 @@ export default {
     text: '#1A1A1A',
     text_secondary: '#717171',
     border: '#f2f2f2',
+  },
+  fonts: {
+    SulSansRegular: 'SulSansRegular',
+    SulSansMedium: 'SulSansMedium',
+    SulSansBold: 'SulSansRegularSulSansBold',
   },
 };
