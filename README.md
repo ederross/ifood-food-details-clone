@@ -1,4 +1,6 @@
-
+<h1 align="center">
+  Ifood clone 😋🥝
+</h1>
 # IFood Clone with micro animations
 
 Neste projeto feito com a Expo CLI, utilizo um pouco da lib Animated do React Native para fazer as micro animações na tela de Food Details do maior aplicativo de delivery da América Latina o "Ifood".
